@@ -7,8 +7,9 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-list>
+    <ion-item (click)="unread(item.id)" *ngFor="let item of listaCanciones">
+      <ion-label>{{ item.titulo }}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
