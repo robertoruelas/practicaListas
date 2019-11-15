@@ -53,16 +53,6 @@ export class LoginPage implements OnInit {
     if (fRegistro.invalid) {
       return;
     }
-
-    /* //const valido = await this.usuarioService.registro( this.registerUser );
-
-if ( valido ) {
-  // navegar al tabs
-  this.navCtrl.navigateRoot( '/main/tabs/tab1', { animated: true } );
-} else {
-  // mostrar alerta de usuario y contraseña no correctos
-  this.uiService.alertaInformativa('Ese correo electrónico ya existe.');
-} */
   }
 
   mostrarRegistro() {
