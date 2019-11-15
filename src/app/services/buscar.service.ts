@@ -16,7 +16,7 @@ export class BuscarService {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
     };
-
+    console.log(body);
     return new Promise(resolve => {
       this.http
         .post(this.server + file, JSON.stringify(body), options)
