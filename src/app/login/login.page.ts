@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides, ToastController, NavController } from '@ionic/angular';
+import { IonSlides, NavController } from '@ionic/angular';
 import { BuscarService } from '../services/buscar.service';
 import { NgForm } from '@angular/forms';
 import { Storage } from '@ionic/storage';
@@ -18,7 +18,11 @@ export class LoginPage implements OnInit {
   };
 
   DatosUsuarios: any;
-  constructor(private serv: BuscarService, private storage: Storage) {}
+  constructor(
+    private serv: BuscarService,
+    private storage: Storage,
+    private navCtrl: NavController
+  ) {}
 
   ngOnInit() {}
 
@@ -37,6 +41,8 @@ export class LoginPage implements OnInit {
 
     if (this.DatosUsuarios.success) {
       /* console.log('entrar');*/
+      // navegar al tabs
+      this.navCtrl.navigateRoot('home', { animated: true });
       this.storage.set('dataUsarios', this.DatosUsuarios.result);
     } else {
       /* console.log('no entrar'); */
